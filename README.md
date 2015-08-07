@@ -2,7 +2,7 @@
 
 ## Overview
 
-* risu rapid image supply unit
+* risu is rapid image supply unit
 
 ## Description
 
