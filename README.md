@@ -6,9 +6,11 @@
 
 ## Description
 
-DockerHubやQuay.ioのSaaS、CI as a Serviceでは、Queueの状態やStackの状態で待たされたり、build時間も30m以上かかる。
+DockerHubやQuay.ioのSaaS、CI as a Serviceでは、Queueの状態やStackの状態で待たされたり、bundle install や assets:precompileを初期状態から行うため、build時間も30m以上かかる。
 
-risuは自前で用意したServer上でコンテナをbuildをし、Quay.io等のregistoryへpushをすることでbuild時間を高速化を図ることを目的としたツールである。
+risuは自前で用意したServer上でコンテナをbuildを行う。
+buildをする際に、ボトルネックとなったbundle install や assets:precompileをcacheとして利用し、高速化を図る。
+build後、Quay.io等のregistoryへpushをすることでbuild時間にフォーカスして高速化を図ることを目的としたツールである。
 
 ## Requirement
 
