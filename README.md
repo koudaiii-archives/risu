@@ -53,25 +53,27 @@ image shot 3
 ## FEATURE
 
  * GitHubにあるprivate repositoryをweb hook経由で取得する
+ * HostはCoreOS,Containerは2つを用意する
+ * Containerはcache更新用とbuild用(quay.ioへPush用)
  * cacheの更新する
   * Host上で $  bundle package で gem instlal とともに、vendor/cache/ に保存 download
   * Host上で $  bundle exec rake assets:precompile
  * 更新したcacheをADDさせて docker build する
   * bundle install --path vendor/bundle --local
- * quay.ioにimageをPush
+ * Quay.ioにimageをPush
 
  - [ ] JSON Scheme設計
  - [ ] GitHub連携でhookからrepositoryを取得
- - [ ] docker build
  - [ ] cache設計
- - [ ] quayへimageをPushする
- - [ ] quayからSlackなどへNotificationする
+ - [ ] docker build cached
+ - [ ] docker build image
+ - [ ] Quay.ioへimageをPushする
+ - [ ] Quay.ioからSlackなどへNotificationする
 
 ## Contribution
 
-Please fork.
-
-```
- $ git clone https://github.com/your_user_name/risu.git
-
-  ```
+1. Fork it ( http://github.com/koudaiii/risu )
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new Pull Request
